@@ -6,41 +6,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Vanilla Weather Search (using openweather)</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input
-          id="inputbox"
-          type="search"
-          placeholder="Enter a city..."
-          required
-        />
-        <input id="btn" type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1 id="current-city">Paris</h1>
-        <p class="current-details"><span id="current-day">Friday </span><span id="current-date">14:22,</span> moderate rain</p>
-        <p>Humidity: 87%, Wind: 7.2km/h</p>
-
-        <div>☀️ 24ºC</div>
-      </div>
-    </main>
-    <footer>
-      <p>
-        This project was coded by
-        <a href="https://github.com/ohfateha" target="_blank">Nur Fateha</a> and
-        is on <a href="#" target="_blank">GitHub</a> and hosted on
-        <a href="#" target="_blank">Netlify</a>
-      </p>
-    </footer>
+    <div class="weather-app">
+      <header>
+        <form>
+          <input
+            class="inputbox"
+            id="inputbox"
+            type="search"
+            placeholder="Enter a city..."
+            required
+          />
+          <input class="btn" id="btn" type="submit" value="Search" />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="current-city">Paris</h1>
+            <p class="current-details">
+              <span id="current-date">Friday 14:25</span>, <span id="current-desc">moderate rain</span><br />
+              Humidity: <strong id="current-humidity">87%</strong>, Wind: <strong id="current-wind">7.2km/h</strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon"> <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" alt="weather-icon"></span
+            ><span class="current-temperature-value" id="current-temperature"
+              >24</span
+            ><span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/ohfateha" target="_blank">Nur Fateha</a>
+          and is on <a href="#" target="_blank">GitHub</a> and hosted on
+          <a href="#" target="_blank">Netlify</a>
+        </p>
+      </footer>
+    </div>
   </body>
   <script src="src/index.js"></script>
 </html>
